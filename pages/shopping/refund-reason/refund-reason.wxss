@@ -1,0 +1,17 @@
+/* pages/shopping/refund-reason/refund-reason.wxss */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+}
+
+.others{
+	margin: 0 1rem;
+	border: 1px solid #CCCCCC;
+}

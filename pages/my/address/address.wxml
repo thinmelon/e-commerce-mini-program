@@ -1,0 +1,44 @@
+<!--pages/my/address/address.wxml-->
+<view class="container">
+    <view class="receiver">
+        <view class="left">
+            <text>收件人</text>
+        </view>
+        <view class="center">
+            <input placeholder="姓名" value="{{receiver}}" data-field='receiver' bindinput='bindInputFunc' />
+        </view>
+        <view class="right">
+            <image src="/icons/public/contact.png"></image>
+        </view>
+    </view>
+    <view class="mobile">
+        <view class="left">
+            <text>手机号码</text>
+        </view>
+        <view class="center">
+            <input placeholder="11位手机号码" value="{{mobile}}" data-field='mobile' bindinput='bindInputFunc' />
+        </view>
+    </view>
+    <view class="address">
+        <view class="left">
+            <text>详细地址</text>
+        </view>
+        <view class="center">
+            <input placeholder="街道门牌信息" value="{{address}}" data-field='address' bindinput='bindInputFunc' />
+        </view>
+        <view class="right" bindtap="bindTapChooseLocation">
+            <image src="/icons/public/location.png"></image>
+        </view>
+    </view>
+    <view class="postcode">
+        <view class="left">
+            <text>邮政编码</text>
+        </view>
+        <view class="center">
+            <input placeholder="邮政编码" value="{{postcode}}" data-field='postcode' bindinput='bindInputFunc' />
+        </view>
+    </view>
+    <view class='bottom-btn' bindtap='bindTapSubmit'>
+        <button type='primary' size='default'>确认</button>
+    </view>
+</view>

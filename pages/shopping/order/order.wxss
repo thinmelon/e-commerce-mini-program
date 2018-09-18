@@ -1,0 +1,145 @@
+/* pages/shopping/order/order.wxss */
+
+.order-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    padding: 25rpx;
+}
+
+.order-status text {
+    font-size: 11pt;
+    margin: 0 20rpx;
+}
+
+.order-status image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.order-process {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.part image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.part text {
+    font-size: 8pt;
+}
+
+.split-line image {
+    width: 200rpx;
+    height: 100rpx;
+}
+
+.location-icon image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.location-icon {
+    margin: 0 15rpx;
+}
+
+.receiver-address {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    padding: 25rpx 0;
+    border-top: 1rpx dotted #ddd;
+}
+
+.receiver {
+    width: 80%;
+    margin-right: 15rpx;
+}
+
+.receiver .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.receiver text {
+    font-size: 10pt;
+}
+
+.delivery, .message, .total, .goods-fee, .delivery-fee, .pay-amount {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.order-total, .order-extra {
+	width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery, .message, .total, .goods-fee, .delivery-fee, .pay-amount {
+    justify-content: space-between;
+    align-items: center;
+	padding: 15px 0 8px 0;
+    border-bottom: 1rpx solid #ddd;
+    background-color: #fff;
+    height: 54rpx;
+}
+
+.delivery text, .message text, .total text, .goods-fee text, .delivery-fee text,
+.pay-amount text {
+    font-size: 11pt;
+}
+
+.operator {
+	 display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15rpx 0;
+}
+
+.operator .refund, .operator .closed, .operator .queryRefund, .operator .repay {
+    border: 1rpx solid #dc143c;
+    padding: 15rpx;
+}
+
+.operator .refund text, .operator .closed text, .operator .queryRefund text,
+.operator .repay text {
+    color: #dc143c;
+    font-size: 10pt;
+}
+
+/* -------------------------------------- */
+
+/*  			    订单额外信息                     */
+
+/* -------------------------------------- */
+
+.order-extra {
+    background-color: #fff;
+    padding: 20rpx 15rpx;
+}
+
+.order-extra text {
+    margin: 15rpx 0;
+    color: #aaa;
+    font-size: 9pt;
+}

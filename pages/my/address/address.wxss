@@ -1,0 +1,29 @@
+/* pages/my/address/address.wxss */
+
+.receiver, .mobile, .address, .postcode {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15rpx;
+    padding: 15rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.left {
+    width: 200rpx;
+}
+
+.left text {
+    font-size: 13pt;
+}
+
+.right {
+    align-self: flex-end;
+}
+
+.receiver image, .address image {
+    width: 50rpx;
+    height: 50rpx;
+}
+

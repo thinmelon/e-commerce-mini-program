@@ -1,0 +1,80 @@
+/* pages/shopping/buy/buy.wxss */
+
+/* 地址栏 */
+
+.shopping-address {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.shopping-address  image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 15rpx;
+}
+
+.shopping-address text {
+    font-size: 11pt;
+}
+
+.shopping-address .unset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 200rpx;
+    padding: 0 30rpx;
+}
+
+.consignee {
+    width: 90%;
+}
+
+.item-select {
+    width: 10%;
+}
+
+.consignee .outter text {
+    font-weight: bold;
+}
+
+.consignee .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.consignee .top, .consignee .center, .consignee .outter {
+    padding: 15rpx 30rpx;
+}
+
+/* 已购商品简介 */
+
+.left text, .right text, .input-placeholder {
+    font-size: 11pt;
+}
+
+.shipping, .message, .goods-price, .carriage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.shipping, .message {
+	padding: 15px 0 8px 0;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.subtotal {
+    display: flex;
+    flex-direction: column;
+    padding: 15rpx 24rpx;
+    border-bottom: 1rpx solid #dcdcdc;
+    width: 100%;
+}

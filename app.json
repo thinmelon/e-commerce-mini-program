@@ -1,0 +1,21 @@
+{
+	"pages": [
+		"pages/shopping/index/index",
+		"pages/shopping/product/product",
+		"pages/shopping/cart/cart",
+		"pages/shopping/buy/buy",
+		"pages/shopping/order/order",
+		"pages/shopping/refund/refund",
+		"pages/shopping/refund-reason/refund-reason",
+		"pages/my/index/index",
+		"pages/my/address/address",
+		"pages/my/consignee/consignee",
+		"pages/my/orders/orders"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#813c85",
+		"navigationBarTitleText": "莆素",
+		"navigationBarTextStyle": "white"
+	}
+}

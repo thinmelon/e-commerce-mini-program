@@ -1,0 +1,8 @@
+<!--pages/shopping/refund-reason/refund-reason.wxml-->
+<radio-group class='radio-group' bindchange="radioChange">
+    <label class="radio" wx:for="{{reasons}}" wx:key="*this">
+        <radio value="{{item}}" />{{item}}
+    </label>
+</radio-group>
+<textarea class='others' bindinput="bindTextAreaInput" auto-height placeholder="输入其它原因" /> 
+<button bindtap='bindTapRefund'>退款</button>

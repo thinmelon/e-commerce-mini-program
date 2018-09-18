@@ -1,0 +1,71 @@
+/* pages/my/consignee/consignee.wxss */
+
+.consignee {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-bottom: 20rpx;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.intro, .top, .center, .bottom, .operator, .edit, .delete {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.intro {
+    justify-content: center;
+    align-items: center;
+}
+
+.intro .left {
+    padding: 15rpx;
+    width: 10%;
+}
+
+.intro .right {
+    width: 90%;
+}
+
+.top, .center,.bottom {
+    justify-content: space-between;
+    padding: 15rpx;
+}
+
+.operator {
+    justify-content: flex-end;
+    padding: 15rpx;
+}
+
+.edit, .delete {
+    justify-content: center;
+    align-items: center;
+    padding: 15rpx 25rpx;
+}
+
+.edit image, .delete image {
+    width: 50rpx;
+    height: 50rpx;
+	margin: 0 15rpx;
+}
+
+ .add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	width: 100%;
+    height: 400rpx;
+}
+
+.add image {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 15rpx;
+}
+
+.add text {
+    font-size: 11pt;
+    color: #b2b2b2;
+} 

@@ -1,0 +1,22 @@
+<!--pages/shopping/refund/refund.wxml-->
+<view class='progress'>
+    <text>{{ order.createTime }}</text>
+    <text>用户下单</text>
+</view>
+<view class='progress'>
+    <text>{{ order.payTime }}</text>
+    <text>付款成功</text>
+</view>
+<view class='progress'>
+    <text>{{ refund.createTime }}</text>
+    <text>用户申请退款，退款原因：{{ refund.reason }}</text>
+	<text>已转入系统后台处理</text>
+</view>
+<view class='progress' wx:if="{{ refund.status === 1 || refund.status === 2 }}">
+    <text>{{ refund.startTime }}</text>
+    <text>发起退款</text>
+</view>
+<view class='progress' wx:if="{{ refund.status === 2}}">
+    <text>{{ refund.complete }}</text>
+    <text>退款完成，退回至用户账户</text>
+</view>

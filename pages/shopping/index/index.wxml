@@ -1,0 +1,8 @@
+<!--pages/shopping/index/index.wxml-->
+<wxs src="../../../utils/page.config.wxs" module="config" />
+<view class='container'>
+    <view wx:for="{{ collections }}" wx:key="{{ item.pid }}" class='collection' data-product='{{ item }}' bindtap='bindTapCollections'>
+        <image mode="widthFix" src="{{item.thumbnails[0].name}}" style='width: 100%' />
+        <text class='title'>{{ item.name }}</text>
+    </view>
+</view>

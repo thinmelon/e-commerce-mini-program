@@ -1,0 +1,40 @@
+/* pages/shopping/cart/cart.wxss */
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px 0;
+}
+
+.top-bar text {
+    font-size: 11pt;
+}
+
+.top-bar-item {
+    margin: 0 15px;
+}
+
+.amount{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 17px;
+}
+
+.amount .operator{
+    width: 36px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+}
+
+.amount input{
+    width: 64px;
+    text-align: center;
+}
+

@@ -1,0 +1,58 @@
+<!--pages/shopping/cart/cart.wxml-->
+<view class='container'>
+    <checkbox-group class='cart-list' bindchange="cartCheckboxChange">
+        <view class='cart-item' wx:for="{{ cart }}" wx:key="{{ item.stock_no }}">
+            <checkbox color='#813c85' value='{{ item.stock_no }}' checked='{{ item.checked }}' wx:if="{{!editModal}}"></checkbox>
+             <view class="thumbnail">
+                <image mode="aspectFill" src="{{ item.thumbnails[0].name }}"></image>
+            </view> 
+            <view class="brief-intro">
+                <view class="name">
+                    <text>{{ item.name }}</text>
+                </view>
+                <view class='standard' wx:for="{{ item.attributes }}" wx:key="{{ attribute }}" wx:for-item="attribute">
+                    <text>{{attribute}}</text>
+                </view>
+                <view class='price'>
+                    <view>
+                        <text>{{item.unit}}</text>
+                    </view>
+                    <view wx:if="{{!editModal}}">
+                        <text>X {{item.amount}}</text>
+                    </view>
+                    <view class='amount' wx:else>
+                        <view class='operator' bindtap='bindTapMinus' data-product='{{item}}'>-</view>
+                        <input type='number' maxlength='5' confirm-type='next' value='{{item.amount}}' bindinput='bindInputFunc' data-stock_no='{{item.stock_no}}'></input>
+                        <view class='operator' bindtap='bindTapAdd' data-product='{{item}}'>+</view>
+                    </view>
+                </view>
+            </view>
+            <view class='delete' wx:if="{{editModal}}" data-stock_no='{{ item.stock_no }}' bindtap='bindTapDelete'>
+                <image mode="aspectFill" src="/icons/public/delete.png"></image>
+            </view>
+        </view>
+    </checkbox-group>
+
+    <view class='top-bar'>
+        <checkbox-group class='top-bar-item' bindchange="selectAllCheckboxChange">
+            <checkbox color='#813c85' checked='{{selectAll}}'>
+                <text>全选</text>
+            </checkbox>
+        </checkbox-group>
+        <view class='top-bar-item' bindtap='bindTapEdit'>
+            <text>{{ editBtnText }}</text>
+        </view>
+    </view>
+
+    <view class="cut-off-rule">
+        <text>{{hint}}</text>
+    </view>
+</view>
+<view class='bottom-bar'>
+    <view class="total">合计：
+        <text>￥{{subtotal}}</text>
+    </view>
+    <view class="submit-order" bindtap='bindTapSettleAccount'>
+        <text>结算</text>
+    </view>
+</view>
