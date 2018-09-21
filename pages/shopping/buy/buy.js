@@ -46,8 +46,6 @@ Page({
             __USER__.
             fetchDefaultConsignee(wx.getStorageSync('__SESSION_KEY__'))
                 .then(res => {
-                    console.log('=======    fetchDefaultConsignee    =======')
-                    console.log(res.data)
                     if (0 === res.data.code && res.data.msg.length > 0) {
                         that.setData({
                             consignee: res.data.msg[0]
@@ -138,7 +136,6 @@ Page({
      *     --  微信支付
      */
     bindTapSubmitOrder: function() {
-        console.log(this.data.isConsigneeShow);
         if (this.data.isConsigneeShow && !this.data.consignee) {
             //	提示
             __WX_API_PROMISE__
@@ -164,22 +161,30 @@ Page({
 
         __SHOPPING__
             .submitUnifiedOrder({
+                appid: wx.getStorageSync('__AUTHORIZER_APPID__'), //appid
                 body: body.substr(0, 32), //  商品描述，最大长度128
                 attach: this.data.message, //  用户留言
                 total_fee: Math.round(this.data.total * 100), //  总金额
                 session: wx.getStorageSync('__SESSION_KEY__'), //  用户 session
                 consignee_no: this.data.consignee.consignee_no, //  地址
-                sku_list: JSON.stringify(sku_list) //  SKU 列表 
+                skuList: JSON.stringify(sku_list) //  SKU 列表 
             })
             .then(result => {
                 console.log(result);
-                out_trade_no = result.data.out_trade_no;
                 return new Promise((resolve, reject) => {
-                    resolve(result);
-                })
+                    if (result.data.hasOwnProperty('return_code') &&
+                        result.data.return_code === 'FAIL') {
+                        reject(result);
+                    } else {
+                        out_trade_no = result.data.out_trade_no;
+                        resolve(result);
+                    }
+                });
             })
             .then(__WX_API_PROMISE__.requestPayment) //  调用支付接口
             .then(res => {
+                console.log('========== SUCCESS ==========');
+                console.log(res);
                 // 支付成功
                 if (res.errMsg === 'requestPayment:ok') {
                     __WX_API_PROMISE__
@@ -194,6 +199,8 @@ Page({
                         });
                 }
             }, res => {
+                console.log('========== FAIL ==========');
+                console.log(res);
                 // 用户取消支付
                 if (res.errMsg === "requestPayment:fail cancel") {
                     __WX_API_PROMISE__
@@ -201,7 +208,8 @@ Page({
                         .then(() => __WX_API_PROMISE__.redirectTo('/pages/my/orders/orders')) //	跳转至 我的订单
                 }
             })
-            .finally(result => {
+            .finally(() => {
+                console.log('========== FINALLY ==========');
                 __USER__
                     .renewMyCart(wx.getStorageSync('__SESSION_KEY__'), JSON.stringify(sku_list))
                     .then((res) => {

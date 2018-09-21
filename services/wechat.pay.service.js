@@ -18,14 +18,7 @@ const __ENUM_ORDER_STATUS__ = [
 const submitUnifiedOrder = (order) => {
     const url = __URI__.submitUnifiedOrder();
     return __WX_API_PROMISE__.postRequest(
-        url, {
-            body: order.body,
-            attach: order.attach,
-            total_fee: order.total_fee,
-            session: order.session,
-            consignee_no: order.consignee_no,
-            skuList: order.sku_list
-        });
+        url, order);
 }
 
 /**
