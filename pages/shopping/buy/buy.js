@@ -162,6 +162,7 @@ Page({
         __SHOPPING__
             .submitUnifiedOrder({
                 appid: wx.getStorageSync('__AUTHORIZER_APPID__'), //appid
+				businessId: wx.getStorageSync('__AUTHORIZER_BUSINESSID__'), //businessId
                 body: body.substr(0, 32), //  商品描述，最大长度128
                 attach: this.data.message, //  用户留言
                 total_fee: Math.round(this.data.total * 100), //  总金额
@@ -206,6 +207,9 @@ Page({
                     __WX_API_PROMISE__
                         .showToast('支付已取消', 'none', '/icons/public/hint.png') //	提示
                         .then(() => __WX_API_PROMISE__.redirectTo('/pages/my/orders/orders')) //	跳转至 我的订单
+                } else {
+                    __WX_API_PROMISE__
+                        .showToast('错误', 'none', '/icons/public/hint.png') //	提示
                 }
             })
             .finally(() => {

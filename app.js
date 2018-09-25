@@ -39,7 +39,7 @@ App({
             .then(result => {
                 return new Promise((resolve, reject) => { //  获取屏宽高
                     resolve({
-                        key: '__WindowScale__',
+						key: '__WINDOW_SCALE__',
                         data: {
                             height: result.windowHeight,
                             width: result.windowWidth

@@ -146,7 +146,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-        const scale = wx.getStorageSync('__WindowScale__');
+		const scale = wx.getStorageSync('__WINDOW_SCALE__');
         //	滚动定位
         this.setData({
             scrollViewHeight: scale.height,
