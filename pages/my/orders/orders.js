@@ -85,7 +85,8 @@ Page({
 
         __USER__
             .fetchMyOrders(
-                wx.getStorageSync('__SESSION_KEY__'), __DATE__.formatTime(new Date()))
+                wx.getStorageSync('__SESSION_KEY__'),
+                0, 10)
             .then(res => {
                 console.log(res);
                 if (res.data.code === 0) {

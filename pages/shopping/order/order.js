@@ -25,7 +25,11 @@ Page({
         console.log(order);
 
         __WX_PAY_SERVICE__
-            .queryOrder(order.out_trade_no)
+            .queryOrder(
+                order.out_trade_no,
+                wx.getStorageSync('__SESSION_KEY__'), //  用户 session
+                wx.getStorageSync('__AUTHORIZER_APPID__') //  授权方appid
+            )
             .then(res => {
                 console.log(res)
                 if (res.data.code === 0) {
@@ -78,7 +82,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-        
+
     },
 
     /**
@@ -147,6 +151,7 @@ Page({
     bindTapRepay: function() {
         __WX_PAY_SERVICE__
             .repay( //  发起重新支付的动作
+                wx.getStorageSync('__AUTHORIZER_APPID__'), //  appid
                 wx.getStorageSync('__SESSION_KEY__'), //  用户 session
                 this.data.order.out_trade_no
             )
@@ -177,6 +182,7 @@ Page({
     bindTapCloseOrder: function() {
         __WX_PAY_SERVICE__
             .closeOrder( //  发起重新支付的动作
+                wx.getStorageSync('__AUTHORIZER_APPID__'), //  appid
                 wx.getStorageSync('__SESSION_KEY__'), //  用户 session
                 this.data.order.out_trade_no
             )
@@ -240,11 +246,11 @@ Page({
             })
     },
 
-	/**
-	 *  出示卡券
-	 */
+    /**
+     *  出示卡券
+     */
     bindTapShowCard: function() {
-		__WX_PAY_SERVICE__
+        __WX_PAY_SERVICE__
             .openUserCardList(
                 wx.getStorageSync('__SESSION_KEY__'),
                 JSON.stringify([this.data.order.out_trade_no])

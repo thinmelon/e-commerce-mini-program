@@ -136,11 +136,12 @@ const renewMyCart = (session, skuList) => {
 /**
  * 	获取我的历史订单列表
  */
-const fetchMyOrders = (session, startTime) => {
+const fetchMyOrders = (session, offset, amount) => {
     const url = __URI__.fetchMyOrders();
     return __WX_API_PROMISE__.postRequest(url, {
         session: session,
-        startTime: startTime
+        offset: offset,
+        amount: amount
     });
 }
 

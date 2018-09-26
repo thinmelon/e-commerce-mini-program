@@ -97,24 +97,3 @@ App({
     }
 })
 
-/** app.json */
-
-// "tabBar": {
-//     "color": "#888888",
-//     "selectedColor": "#FFFFFF",
-//     "backgroundColor": "#813c85",
-//     "borderStyle": "white",
-//     "list": [{
-//             "pagePath": "pages/shopping/index/index",
-//             "text": "好物",
-//             "iconPath": "icons/tabBar/nice-grey.png",
-//             "selectedIconPath": "icons/tabBar/nice-white.png"
-//         },
-//         {
-//             "pagePath": "pages/my/orders/orders",
-//             "text": "我的",
-//             "iconPath": "icons/tabBar/my-grey.png",
-//             "selectedIconPath": "icons/tabBar/my-white.png"
-//         }
-//     ]
-// }

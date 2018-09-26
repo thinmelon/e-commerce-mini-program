@@ -45,8 +45,8 @@ const closeOrder = () => {
 /**
  *   查询微信支付订单
  */
-const queryWechatPayOrder = (out_trade_no) => {
-    return `${PREFIX_SHOPPING}/order/${out_trade_no}`;
+const queryWechatPayOrder = (out_trade_no, session, appid) => {
+    return `${PREFIX_SHOPPING}/order/${out_trade_no}?session=${session}&appid=${appid}`;
 }
 
 /**

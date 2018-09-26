@@ -24,10 +24,11 @@ const submitUnifiedOrder = (order) => {
 /**
  * 	重新支付
  */
-const repay = (session, out_trade_no) => {
+const repay = (appid, session, out_trade_no) => {
     const url = __URI__.repay();
     return __WX_API_PROMISE__.postRequest(
         url, {
+            appid: appid,
             session: session,
             out_trade_no: out_trade_no
         });
@@ -36,10 +37,11 @@ const repay = (session, out_trade_no) => {
 /**
  *  关闭订单
  */
-const closeOrder = (session, out_trade_no) => {
+const closeOrder = (appid, session, out_trade_no) => {
     const url = __URI__.closeOrder();
     return __WX_API_PROMISE__.deleteRequest(
         url, {
+            appid: appid,
             session: session,
             out_trade_no: out_trade_no
         });
@@ -48,8 +50,8 @@ const closeOrder = (session, out_trade_no) => {
 /**
  *   查询支付结果
  */
-const queryWechatPayOrder = (out_trade_no) => {
-    const url = __URI__.queryWechatPayOrder(out_trade_no);
+const queryWechatPayOrder = (out_trade_no, session, appid) => {
+    const url = __URI__.queryWechatPayOrder(out_trade_no, session, appid);
     return __WX_API_PROMISE__.getRequest(url, {});
 }
 
