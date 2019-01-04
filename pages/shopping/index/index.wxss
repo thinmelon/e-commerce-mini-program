@@ -1,8 +1,0 @@
-/* pages/shopping/index/index.wxss */
-
-.collection {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    margin: 10px 0;
-}

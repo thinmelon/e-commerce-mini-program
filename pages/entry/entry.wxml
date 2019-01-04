@@ -1,0 +1,19 @@
+<!--pages/entry/entry.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    <picker-view indicator-style="height: 50px;" class='picker-view' bindchange="onChangeAuthorizer">
+        <picker-view-column>
+            <view wx:for="{{authorizerList}}" wx:key="{{item.appid}}" class='picker-view-column'>{{item.appid}}</view>
+        </picker-view-column>
+    </picker-view>
+    <view class="business-list">
+        <view class="business" wx:for="{{businessList}}" wx:key="{{item._id}}" data-business='{{item}}' bindtap='onTapBusiness'>
+            <text>{{item.name}}</text>
+            <image src="/icons/entry.png"></image>
+        </view>
+        <text wx:if="{{businessList.length === 0}}">尚未创建店铺</text>
+    </view>
+</view>

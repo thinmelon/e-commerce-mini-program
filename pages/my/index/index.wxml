@@ -1,2 +1,0 @@
-<!--pages/my/index/index.wxml-->
-<button type='warn' bindtap='bindTapMyOrders'>我的订单</button>

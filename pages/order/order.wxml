@@ -1,0 +1,4 @@
+<!--pages/order/order.wxml-->
+<view wx:for="{{orderList}}" wx:key="{{item._id}}">
+    <text>{{item.createTime}}</text>
+</view>

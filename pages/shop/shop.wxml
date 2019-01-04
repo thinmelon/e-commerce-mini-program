@@ -1,0 +1,15 @@
+<!--pages/shop/shop.wxml-->
+<view class='shop'>
+    <view class='shop-item' bindtap='onTapProduct'>
+        <text>商品</text>
+    </view>
+    <view class='shop-item' bindtap='onTapOrder'>
+        <text>订单</text>
+    </view>
+    <view class='shop-item' bindtap='onTapBill'>
+        <text>流水</text>
+    </view>
+    <view class='shop-item' bindtap='onTapCapital'>
+        <text>资产</text>
+    </view>
+</view>

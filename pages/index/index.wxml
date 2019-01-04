@@ -1,0 +1,4 @@
+<!--pages/index/index.wxml-->
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">
+    进入
+</button>

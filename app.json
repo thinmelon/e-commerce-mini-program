@@ -1,40 +1,17 @@
 {
 	"pages": [
-		"pages/shopping/index/index",
-		"pages/shopping/product/product",
-		"pages/shopping/cart/cart",
-		"pages/shopping/buy/buy",
-		"pages/shopping/order/order",
-		"pages/shopping/refund/refund",
-		"pages/shopping/refund-reason/refund-reason",
-		"pages/my/index/index",
-		"pages/my/address/address",
-		"pages/my/consignee/consignee",
-		"pages/my/orders/orders"
+		"pages/index/index",
+		"pages/entry/entry",
+		"pages/shop/shop",
+		"pages/product/product",
+		"pages/order/order",
+		"pages/bill/bill",
+		"pages/capital/capital"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#813c85",
-		"navigationBarTitleText": "莆素",
+		"navigationBarBackgroundColor": "##F44336",
+		"navigationBarTitleText": "商家后台",
 		"navigationBarTextStyle": "white"
-	},
-	"tabBar": {
-	    "color": "#888888",
-	    "selectedColor": "#FFFFFF",
-	    "backgroundColor": "#813c85",
-	    "borderStyle": "white",
-	    "list": [{
-	            "pagePath": "pages/shopping/index/index",
-	            "text": "首页",
-	            "iconPath": "icons/tabBar/nice-grey.png",
-	            "selectedIconPath": "icons/tabBar/nice-white.png"
-	        },
-	        {
-	            "pagePath": "pages/my/index/index",
-	            "text": "我的",
-	            "iconPath": "icons/tabBar/my-grey.png",
-	            "selectedIconPath": "icons/tabBar/my-white.png"
-	        }
-	    ]
 	}
 }
