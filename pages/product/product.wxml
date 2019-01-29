@@ -1,4 +1,0 @@
-<!--pages/product/product.wxml-->
-<view wx:for="{{productList}}" wx:key="{{item._id}}">
-    <text>{{item.name}}</text>
-</view>

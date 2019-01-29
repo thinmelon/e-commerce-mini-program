@@ -1,0 +1,2 @@
+<!--components/uploader.wxml-->
+<button bindtap='_onTapUploadImage'>{{ uploadBtnText }}</button>

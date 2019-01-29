@@ -1,0 +1,54 @@
+/* components/stock/stock.wxss */
+
+input {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.add-attribute {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.attribute {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.attribute button {
+    margin: 5px;
+}
+
+/* 规格样式 */
+
+.standard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 17px 0;
+}
+
+.standard image {
+    width: 30px;
+    height: 30px;
+}
+
+.sku {
+    display: flex;
+    flex-direction: row;
+}
+
+.stock-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    margin: 7px;
+}

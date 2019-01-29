@@ -1,0 +1,24 @@
+/* components/steps.wxss */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.radio {
+    margin: 0.5rem 0;
+}
+
+.input-text {
+    border-bottom: 1px solid black;
+}
+
+.go {
+    position: fixed;
+    width: 100%;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

@@ -1,2 +1,22 @@
 <!--pages/capital/capital.wxml-->
-<text>pages/capital/capital.wxml</text>
+<view class='container'>
+    <view>
+        <text>账户余额：{{ amount }} 元</text>
+    </view>
+
+    <view>
+        <text>可提取金额：{{ available }} 元</text>
+    </view>
+
+    <view>
+        <text>为保证您的资金安全，系统将发送验证码至您在后台绑定的手机号码{{ phone }}上，提取的现金将转至银行卡号：{{ bankNo }}上，持卡人姓名：{{ name }}</text>
+    </view>
+
+    <view class='cash'>
+        <text>申请提现：</text>
+        <input type='digit' confirm-type='done' aria-label='请输入提现金额' placeholder='请输入提现金额' maxlength='9' bindinput='onInputCash' value='{{ cash }}'></input>
+        <text> 元</text>
+    </view>
+
+    <code phone='{{ phone }}' isPhoneDisabled='true' bind:onCompleteCodeEvt='onCompleteCode'></code>
+</view>

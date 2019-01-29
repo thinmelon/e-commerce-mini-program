@@ -1,0 +1,27 @@
+<!--components/steps.wxml-->
+<text>第 {{ step + 1 }} 步 - {{ introduction }}</text>
+<view wx:if='{{ type === "radio" }}'>
+    <radio-group class="radio-group" bindchange="_onRadioChange">
+        <label class="radio" wx:for="{{source}}" wx:key="{{item.key}}">
+            <radio value="{{item.key}}" checked="{{item.checked}}" /> {{item.value}}
+        </label>
+    </radio-group>
+</view>
+
+<view wx:if='{{ type === "text" }}'>
+    <input class='input-text' type='text' placeholder='商品标题' bindinput='onInputTitle'></input>
+</view>
+
+<view wx:if='{{ type === "stock" }}'>
+    <stock bind:stockChangeEvt='onStockChanged'></stock>
+</view>
+
+<view wx:if='{{ type === "uploader" }}'>
+    <uploader uploadBtnText='上传图片' maxUploadFiles='1' bind:uploadCompletedEvt='onUploadCompleted'></uploader>
+</view>
+
+<view class='go'>
+    <button wx:if="{{ step > 0 }}" bindtap='_onTapPrevious'>上一步</button>
+    <button wx:if="{{ (step+1) === maxSteps }}" bindtap='_onTapNext'>完成</button>
+    <button wx:if="{{ (step+1) !== maxSteps }}" bindtap='_onTapNext'>下一步</button>
+</view>

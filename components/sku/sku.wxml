@@ -1,0 +1,47 @@
+<!--components/sku.wxml-->
+<checkbox-group class='sku-list' bindchange="_checkboxSelectSingleChange">
+    <view class='sku-item' wx:for="{{ skuList }}" wx:key="{{ item.stock_no }}">
+        <view class='sku-info'>
+            <checkbox color='#813c85' value='{{ item.stock_no }}' checked='{{ item.checked }}' wx:if="{{!editModel && (model === 'CART') }}"></checkbox>
+            <view class="thumbnail">
+                <image mode="aspectFill" src="{{ item.thumbnail }}"></image>
+            </view>
+            <view class="brief-intro">
+                <view class="name">
+                    <text>{{ item.name }}</text>
+                </view>
+                <view class='standard' wx:for="{{ item.attributes }}" wx:key="{{ attribute }}" wx:for-item="attribute">
+                    <text>{{attribute.name}} : {{attribute.value}}</text>
+                </view>
+                <view class='price'>
+                    <view wx:if="{{!editModel}}">
+                        <text>{{item.unit}} X {{item.amount}}</text>
+                    </view>
+                    <view class='amount' wx:else>
+                        <view class='operator' bindtap='_bindTapMinus' data-product='{{item}}'>
+                            <image mode="aspectFill" src="/icons/shopping/minus.png"></image>
+                        </view>
+                        <input type='number' maxlength='5' confirm-type='next' value='{{item.amount}}' bindinput='_bindInputFunc' data-stock_no='{{item.stock_no}}'></input>
+                        <view class='operator' bindtap='_bindTapAdd' data-product='{{item}}'>
+                            <image mode="aspectFill" src="/icons/shopping/plus.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='delete' wx:if="{{editModel}}" data-stock_no='{{ item.stock_no }}' bindtap='bindTapDelete'>
+            <image mode="aspectFill" src="/icons/public/delete.png"></image>
+        </view>
+    </view>
+</checkbox-group>
+
+<view class='top-bar' wx:if="{{ model === 'CART' }}">
+    <checkbox-group class='top-bar-item' bindchange="_checkboxSelectAllChange">
+        <checkbox color='#813c85' checked='{{selectAll}}'>
+            <text>全选</text>
+        </checkbox>
+    </checkbox-group>
+    <view class='top-bar-item' bindtap='_bindTapEdit'>
+        <text>{{ editBtnText }}</text>
+    </view>
+</view>

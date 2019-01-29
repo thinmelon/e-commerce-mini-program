@@ -17,6 +17,13 @@ const userLogin = (appid) => {
 }
 
 /**
+ *   发送验证码
+ */
+const sendVerificationCode = (session) => {
+    return `${PREFIX_PLATFORM}/sms?session=${session }`;
+}
+
+/**
  * 	 保存用户信息
  */
 const saveUserInfo = (session) => {
@@ -59,19 +66,60 @@ const getOrderList = (session, businessId, offset, amount) => {
 }
 
 /**
+ * 获取账单流水
+ */
+const getBillList = (session, offset, amount) => {
+    return `${PREFIX_BACKBONE}/authorizer/bills?session=${session}&offset=${offset}&amount=${amount}`;
+}
+
+/**
  * 获取我的资产信息
  */
 const getMyCapital = (session) => {
     return `${PREFIX_BACKBONE}/authorizer/capital?session=${session}`;
 }
 
+/**
+ * 获取我的银行卡信息
+ */
+const getMyBankCard = (session) => {
+    return `${PREFIX_BACKBONE}/authorizer/bank?session=${session}`;
+}
+
+/**
+ * 申请提现
+ */
+const withdrawCash = (session) => {
+    return `${PREFIX_BACKBONE}/authorizer/capital/available?session=${session}`;
+}
+
+/**
+ *  新增商品
+ */
+const addProduct = (session, businessId) => {
+    return `${PREFIX_BACKBONE}/product?session=${session}&bid=${businessId}`;
+}
+
+/**
+ * 上传图片
+ */
+const uploadImage = () => {
+    return `${PREFIX_STORAGE}/image`;
+}
+
 module.exports = {
     userLogin: userLogin,
+    sendVerificationCode: sendVerificationCode,
     saveUserInfo: saveUserInfo,
     switchIdentity: switchIdentity,
     getAuthorizerList: getAuthorizerList,
     getBusinessList: getBusinessList,
     getProductList: getProductList,
     getOrderList: getOrderList,
-    getMyCapital: getMyCapital
+    getBillList: getBillList,
+    getMyCapital: getMyCapital,
+    getMyBankCard: getMyBankCard,
+    withdrawCash: withdrawCash,
+    addProduct: addProduct,
+    uploadImage: uploadImage
 }

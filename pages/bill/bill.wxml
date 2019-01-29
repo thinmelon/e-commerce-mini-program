@@ -1,2 +1,15 @@
 <!--pages/bill/bill.wxml-->
-<text>pages/bill/bill.wxml</text>
+<view wx:for="{{collections}}" wx:key="{{item._id}}">
+    <view>
+        <text>订单号：{{item.out_trade_no}}</text>
+    </view>
+    <view>
+        <text>金额：{{item.amount}} 元</text>
+    </view>
+    <view>
+        <text>流水类型：{{item.billType}}</text>
+    </view>
+    <view>
+        <text>状态：{{item.status}}</text>
+    </view>
+</view>

@@ -1,1 +1,44 @@
 /* pages/order/order.wxss */
+
+.order-list {
+    border-bottom: 1rpx solid #aaa;
+    padding: 15rpx 0;
+}
+
+.sku-list {
+    width: 100%;
+    padding: 15rpx 0;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.status, .total {
+    display: flex;
+    flex-direction: row;
+}
+
+.status {
+    justify-content: space-between;
+    padding: 0 15rpx;
+}
+
+.status text {
+    color: #aaa;
+    font-size: 9pt;
+    margin: 15rpx 0;
+}
+
+.total {
+    justify-content: flex-end;
+    padding: 15rpx;
+}
+
+.total text {
+    font-size: 12pt;
+    margin: 0 20rpx;
+}
+
+.text-price {
+    color: #dc143c;
+}

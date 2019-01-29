@@ -74,7 +74,7 @@ Page({
      */
     onTapProduct: function() {
         wx.navigateTo({
-            url: '/pages/product/product?bid=' + this.bid
+            url: '/pages/product/index/index?bid=' + this.bid
         });
     },
 

@@ -1,4 +1,13 @@
 <!--pages/order/order.wxml-->
-<view wx:for="{{orderList}}" wx:key="{{item._id}}">
-    <text>{{item.createTime}}</text>
+
+<view class="order-list" wx:for="{{orderList}}" wx:key="{{item._id}}" data-order='{{ item }}' bindtap='bindTapOrderDetail'>
+    <view class="status">
+        <text>{{item.createTime}}</text>
+        <text>{{item.status}}</text>
+    </view>
+    <sku model='NORMAL' skuList='{{ item.skuList }}'></sku>
+    <view class="total">
+        <text>合计</text>
+        <text class="text-price">￥{{item.totalFee}}</text>
+    </view>
 </view>

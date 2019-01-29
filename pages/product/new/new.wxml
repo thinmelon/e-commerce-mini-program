@@ -1,0 +1,2 @@
+<!--pages/product/new/new.wxml-->
+<steps type='{{ type }}' step='{{ step }}' introduction='{{ introduction }}' source='{{ source }}' bind:tapNextEvt='onTapNext' bind:tapPreviousEvt='onTapPrevious' maxSteps='{{ maxSteps }}'></steps>

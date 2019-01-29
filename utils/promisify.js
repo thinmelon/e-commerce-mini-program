@@ -122,6 +122,30 @@ function wxHideLoadingPromise() {
     return Promisify(wx.hideLoading)();
 }
 
+/**
+ *      选择图片
+ */
+function wxChooseImagePromise(options) {
+    return Promisify(wx.chooseImage)({
+        count: options.count,
+        sizeType: options.sizeType || ['original', 'compressed'],
+        sourceType: options.sourceType || ['album', 'camera']
+    });
+}
+
+/**
+ *      上传文件
+ */
+function wxUploadFilePromise(options) {
+    return Promisify(wx.uploadFile)({
+        url: options.url,
+        filePath: options.filePaths[options.fileIndex],
+        name: options.name,
+        header: options.header,
+        formData: options.formData
+    });
+}
+
 module.exports = {
     /**
      * 		HTTP 请求
@@ -144,4 +168,9 @@ module.exports = {
      */
     showLoading: wxShowLoadingPromise,
     hideLoading: wxHideLoadingPromise,
+    /**
+     *      文件管理
+     */
+    chooseImage: wxChooseImagePromise,
+    uploadFile: wxUploadFilePromise
 }

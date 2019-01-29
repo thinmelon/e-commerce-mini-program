@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+    "navigationBarTitleText": "用户订单",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "sku": "/components/sku/sku"
+    }
 }

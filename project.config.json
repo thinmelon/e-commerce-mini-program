@@ -12,7 +12,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
+	"libVersion": "2.5.0",
 	"appid": "wxc91180e424549fbf",
 	"projectname": "%E5%95%86%E5%AE%B6%E5%90%8E%E5%8F%B0",
 	"isGameTourist": false,
@@ -38,8 +38,14 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "我的店铺",
-					"pathName": "pages/shop/shop",
+					"name": "添加商品",
+					"pathName": "pages/product/new/new",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "商品列表",
+					"pathName": "pages/product/index/index",
 					"query": "bid=5bdbf6960220aeeb768f865c"
 				}
 			]

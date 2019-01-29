@@ -1,0 +1,6 @@
+/* pages/product/index/index.wxss */
+.new-product{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

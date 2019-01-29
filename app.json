@@ -3,7 +3,8 @@
 		"pages/index/index",
 		"pages/entry/entry",
 		"pages/shop/shop",
-		"pages/product/product",
+        "pages/product/index/index",
+        "pages/product/new/new",
 		"pages/order/order",
 		"pages/bill/bill",
 		"pages/capital/capital"

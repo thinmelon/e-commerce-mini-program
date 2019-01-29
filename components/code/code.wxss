@@ -1,12 +1,12 @@
-/* pages/capital/capital.wxss */
+/* components/code.wxss */
 
-.cash {
+.code {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
 }
 
-.cash input {
+.code input {
     border-bottom: 1px solid black;
 }

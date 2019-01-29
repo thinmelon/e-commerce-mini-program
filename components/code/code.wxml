@@ -1,0 +1,8 @@
+<!--components/code.wxml-->
+<view class='code'>
+    <input type='number' confirm-type='next' aria-label='请输入手机号码' placeholder='请输入手机号码' maxlength='11' bindinput='_onInputPhone' value='{{ phone }}' disabled='{{ isPhoneDisabled }}'></input>
+    <button size='mini' type='warn' bindtap='_onTapSendBtn' disabled='{{hasSent}}'>{{sendBtnText}} </button>
+</view>
+<view class='code'>
+    <input type='number' confirm-type='done' aria-label='请输入验证码' placeholder='验证码' maxlength='6' bindinput='_onInputCode'></input>
+</view>

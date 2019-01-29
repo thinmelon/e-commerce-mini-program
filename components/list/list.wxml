@@ -1,0 +1,14 @@
+<!--components/list/list.wxml-->
+<view class='container'>
+    <view wx:for="{{ collections }}" wx:key="{{ item._id }}" class='collection' data-product='{{ item }}' bindtap='bindTapCollections'>
+        <image mode="widthFix" src="{{item.thumbnails[0].url}}" style='width: 30%' />
+        <view class='right'>
+            <text class='title'>{{ item.name }}</text>
+            <view class='operator'>
+                <button size='mini'>上架</button>
+                <button size='mini' type='primary'>编辑</button>
+                <button size='mini' type='warn'>删除</button>
+            </view>
+        </view>
+    </view>
+</view>

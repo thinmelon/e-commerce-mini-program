@@ -1,0 +1,118 @@
+/* components/sku.wxss */
+
+/*  			    购物车列表项                     */
+
+.sku-list {
+    width: 100%;
+}
+
+.sku-item, .sku-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sku-info {
+    justify-content: flex-start;
+    margin-left: 11px;
+}
+
+.sku-item {
+    justify-content: space-between;
+    padding: 15px 0 8px 0;
+}
+
+/*  			    微缩图                     */
+
+.thumbnail {
+    margin: 15rpx;
+    border-radius: 8rpx;
+}
+
+.thumbnail image {
+    width: 150rpx;
+    height: 150rpx;
+    /* border: 1rpx solid #ddd; */
+}
+
+.brief-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/*  			    规格                     */
+
+.standard {
+    padding-top: 7rpx;
+}
+
+.standard text {
+    font: 9pt;
+    color: #b2b2b2;
+}
+
+/*  			    价格                     */
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 23rpx;
+}
+
+.price text {
+    color: #dc143c;
+}
+
+/*  			    功能栏（全选、编辑）                     */
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px 0;
+}
+
+.top-bar text {
+    font-size: 11pt;
+}
+
+.top-bar-item {
+    margin: 0 15px;
+}
+
+/*  			    数量                     */
+
+.amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30rpx;
+}
+
+.amount input {
+    width: 50%;
+    text-align: right;
+}
+
+.operator image {
+    width: 45rpx;
+    height: 45rpx;
+}
+
+/*  			    删除键                     */
+
+.delete {
+    margin-right: 11px;
+}
+
+.delete image {
+    width: 45rpx;
+    height: 45rpx;
+}

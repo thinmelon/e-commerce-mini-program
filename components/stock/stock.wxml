@@ -1,0 +1,39 @@
+<!--components/stock/stock.wxml-->
+<view wx:if="{{!isSaved}}">
+    <view class='add-attribute'>
+        <input type='text' placeholder='输入款式' value='{{attribute}}' bindinput='_onInputAttribute'></input>
+        <button size='mini' type='primary' bindtap='_onTapAddAttribute'>添加</button>
+    </view>
+    <!-- <label>输入款式，点击添加</label> -->
+    <label>已添加款式：</label>
+    <view class='attribute'>
+        <button wx:for="{{attributes}}" wx:key="{{item}}" size='mini' type='warn' data-name='{{item}}' bindtap='_removeAllStandards'>{{item}} X</button>
+    </view>
+
+    <label>设置规格：</label>
+    <view class='standard' wx:for="{{standards}}" wx:key="{{item.id}}">
+        <image src='/icons/minus.png' data-id='{{item.id}}' bindtap='_removeStandard'></image>
+        <label>{{item.name}}:</label>
+        <input type='text' placeholder='请输入规格' data-id='{{item.id}}' bindinput='_onInputStandard'></input>
+        <image src='/icons/plus.png' data-name='{{item.name}}' bindtap='_addStandard'></image>
+    </view>
+    <view>
+        <button size='mini' type='primary' bindtap='_onTapConfirm'>保存</button>
+    </view>
+</view>
+
+<view wx:if="{{isSaved}}">
+    <view wx:for="{{sku}}" wx:key="{{item.id}}" class='sku'>
+        <view class='stock-item'>
+            <text wx:for="{{attributes}}" wx:key="*this" wx:for-item="name">{{name}} : {{item[name]}}</text>
+        </view>
+        <view class='stock-item'>
+            <label>单价：</label>
+            <input type='digit' placeholder='单价' value='{{item.unit}}' data-id='{{item.id}}' bindinput='_onInputStockUnit'></input>
+        </view>
+        <view class='stock-item'>
+            <label>数量：</label>
+            <input type='number' placeholder='数量' value='{{item.amount}}' data-id='{{item.id}}' bindinput='_onInputStockAmount'></input>
+        </view>
+    </view>
+</view>

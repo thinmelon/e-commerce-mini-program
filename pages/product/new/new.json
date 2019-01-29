@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "添加商品",
+    "usingComponents": {
+        "steps": "/components/steps/steps"
+    }
+}
